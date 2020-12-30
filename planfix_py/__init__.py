@@ -1,1 +1,1 @@
-from .api import PlanfixApi
+from .api import PlanfixAPI
