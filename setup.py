@@ -7,12 +7,16 @@ setup(
 	license='MIT',
 	description='',
 
-	packages=['planfix_py'],
-
 	url='https://github.com/LD31D/planfix_py',
 
 	author='LD31D',
 	author_email='artem.12m21@gmail.com',
+
+	packages=['planfix_py'],
+
+	install_requires=[
+		"requests",
+    ],
 
 	zip_safe=False
 )
