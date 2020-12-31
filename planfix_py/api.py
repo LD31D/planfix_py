@@ -3,13 +3,17 @@ from requests.auth import HTTPBasicAuth
 
 
 class PlanfixAPI(object):
-	_URL = 'https://api.planfix.ru/xml'
-	_HEADERS = {'Accept': 'application/xml', 'Content-Type': 'application/xml'}
+	account = None
+	token = None
+	api_key = None 
+	
+	url = 'https://api.planfix.ru/xml'
+	headers = {'Accept': 'application/xml', 'Content-Type': 'application/xml'}
 
 	def __init__(self, account=None, token=None, api_key=None):
-		self._account = account
-		self._token = token
-		self._api_key = api_key
+		self.account = account
+		self.token = token
+		self.api_key = api_key
 
 	def _send_request(self, xml):
 		response = post(
