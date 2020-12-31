@@ -6,7 +6,7 @@ class PlanfixAPI(object):
 	account = None
 	token = None
 	api_key = None 
-	
+
 	url = 'https://api.planfix.ru/xml'
 	headers = {'Accept': 'application/xml', 'Content-Type': 'application/xml'}
 
@@ -17,12 +17,12 @@ class PlanfixAPI(object):
 
 	def _send_request(self, xml):
 		response = post(
-				self._URL, 
+				self.url, 
 				data=xml.encode('UTF-8'), 
-				headers=self._HEADERS, 
+				headers=self.headers, 
 				auth=HTTPBasicAuth(
-						self._api_key,
-						self._token, 
+						self.api_key,
+						self.token, 
 					)
 			)
 
