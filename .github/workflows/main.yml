@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say Hi to World
+        run: echo Hello, world!
+
+      - name: Git Clone
+        uses: actions/checkout@v1
+
+      - name: Show all files/folders in project
+        run: ls -la
