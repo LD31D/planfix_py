@@ -29,15 +29,14 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Preparing
-        run: |
-          python setup.py sdist
-#           pip install twine
+        run: python setup.py sdist
           
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:
           user: LD31D
           password: ${{ secrets.PYPI_PASSWORD }}
+          verbose: true
 
       
 
