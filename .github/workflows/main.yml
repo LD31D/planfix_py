@@ -28,9 +28,9 @@ jobs:
       - name: Git Clone
         uses: actions/checkout@v1
 
-#       - name: Preparing
-#         run: |
-#           python setup.py sdist
+      - name: Preparing
+        run: |
+          python setup.py sdist
 #           pip install twine
           
       - name: Publish a Python distribution to PyPI
