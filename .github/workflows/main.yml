@@ -1,4 +1,4 @@
-name: CI
+name: PYPI-CI
 
 on:
   push:
@@ -7,22 +7,23 @@ on:
 #     branches: [ main ]
 
 jobs:
-#   testing:
-#     runs-on: ubuntu-latest
+  testing:
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - name: Say Hi to World
-#         run: echo Hello, world!
+    steps:
+      - name: Git Clone
+        uses: actions/checkout@v1
 
-# #       - name: Git Clone
-# #         uses: actions/checkout@v1
+      - name: Install package
+        run: python setup.py install 
 
-# #       - name: Show all files/folders in project
-# #         run: ls -la
+      - name: Start unit tests
+        run: python -m unittest discover -s tests/ -p 'test_*.py'
+
   
   deploy:
     runs-on: ubuntu-latest
-#     needs: [testing]
+    needs: [testing]
 
     steps:
       - name: Git Clone
@@ -37,7 +38,3 @@ jobs:
           user: LD31D
           password: ${{ secrets.PYPI_PASSWORD }}
           verbose: true
-
-      
-
-
