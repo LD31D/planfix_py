@@ -7,15 +7,38 @@ on:
 #     branches: [ main ]
 
 jobs:
-  testing:
+#   testing:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Say Hi to World
+#         run: echo Hello, world!
+
+# #       - name: Git Clone
+# #         uses: actions/checkout@v1
+
+# #       - name: Show all files/folders in project
+# #         run: ls -la
+  
+  deploy:
     runs-on: ubuntu-latest
+#     needs: [testing]
 
     steps:
-      - name: Say Hi to World
-        run: echo Hello, world!
-
       - name: Git Clone
         uses: actions/checkout@v1
 
-      - name: Show all files/folders in project
-        run: ls -la
+#       - name: Preparing
+#         run: |
+#           python setup.py sdist
+#           pip install twine
+          
+      - name: Publish a Python distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: LD31D
+          password: ${{ secrets.PYPI_PASSWORD }}
+
+      
+
+
