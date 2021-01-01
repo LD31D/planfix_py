@@ -17,9 +17,6 @@ jobs:
         with:
           python-version: 3.8
 
-      # - name: pip
-      #   run: python -m pip install -U pip setuptools
-
       - name: Install package
         run: python setup.py install 
 
@@ -36,7 +33,9 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Preparing
-        run: python setup.py sdist
+        run: |
+          python setup.py sdist
+          rm -rf planfix_py.egg-info
           
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@master
