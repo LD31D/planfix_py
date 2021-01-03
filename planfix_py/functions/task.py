@@ -1,3 +1,5 @@
 class Task(object):
-	pass
+	
+	def __init__(self, base):
+		self = base
 	

@@ -1,6 +1,8 @@
 from requests import post
 from requests.auth import HTTPBasicAuth
 
+from .functions import Contact, Task
+
 
 class PlanfixAPI(object):
 	account = None
@@ -14,6 +16,9 @@ class PlanfixAPI(object):
 		self.account = account
 		self.token = token
 		self.api_key = api_key
+
+		self.task = Task(self)
+		self.contact = Contact(self)
 
 	def _send_request(self, xml):
 		response = post(

@@ -6,7 +6,7 @@ with open('README.md', 'r') as file:
 
 setup(
 	name='planfix-py',
-	version='0.2.2',
+	version='0.3',
 	license='MIT',
 	description='Python package for working with Planfix API',
 
