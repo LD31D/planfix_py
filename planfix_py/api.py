@@ -1,6 +1,8 @@
 from requests import post
 from requests.auth import HTTPBasicAuth
 
+from jinja2 import Environment, PackageLoader
+
 from .functions import Contact, Task
 
 
@@ -11,6 +13,10 @@ class PlanfixAPI(object):
 
 	url = 'https://api.planfix.ru/xml'
 	headers = {'Accept': 'application/xml', 'Content-Type': 'application/xml'}
+
+	__templates_env = Environment(
+			loader=PackageLoader('planfix_py', 'templates')
+		)
 
 	def __init__(self, account=None, token=None, api_key=None):
 		self.account = account
@@ -33,3 +39,9 @@ class PlanfixAPI(object):
 
 		text = response.text
 		return text
+
+	def _load_template(self, template_name, *args, **kwargs):
+		template = self.__templates_env.get_template(template_name)
+		request_message = template.render(**kwargs)
+
+		return request_message

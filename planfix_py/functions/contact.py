@@ -1,13 +1,20 @@
 class Contact(object):
+
+	TEMPLATE_FOLDER = 'contact/'
 	
 	def __init__(self, base):
-		self = base
+		self.__base__ = base
 
-	def add(self):
+	def add(self, *args, **kwargs):
 		"""
 		https://planfix.ru/docs/%D0%9F%D0%BB%D0%B0%D0%BD%D0%A4%D0%B8%D0%BA%D1%81_API_contact.add
 		"""
-		pass
+		TEMPLATE_NAME = self.TEMPLATE_FOLDER + 'add.xml'
+
+		request_message = self.__base__._load_template(TEMPLATE_NAME, **kwargs)
+		response = self.__base__._send_request(request_message)
+
+		return response
 
 	def update(self):
 		"""

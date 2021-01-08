@@ -21,7 +21,8 @@ setup(
 	packages=['planfix_py'],
 
 	install_requires=[
-		"requests",
+		'requests',
+		'jinja2'
     ],
 
 	zip_safe=False
