@@ -5,25 +5,25 @@ class Contact(object):
 	def __init__(self, base):
 		self.__base__ = base
 
-	def add(self, *args, **kwargs):
+	def add(self, **kwargs):
 		"""
 		https://planfix.ru/docs/%D0%9F%D0%BB%D0%B0%D0%BD%D0%A4%D0%B8%D0%BA%D1%81_API_contact.add
 		"""
 		TEMPLATE_NAME = self.TEMPLATE_FOLDER + 'add.xml'
 
-		kwargs['account'] = self.__base__.account
-
-		request_message = self.__base__._load_template(TEMPLATE_NAME, **kwargs)
-		# print(request_message)
-		response = self.__base__._send_request(request_message)
+		response = self.__base__._get_response(TEMPLATE_NAME, **kwargs)
 
 		return response
 
-	def update(self):
+	def update(self, **kwargs):
 		"""
 		https://planfix.ru/docs/%D0%9F%D0%BB%D0%B0%D0%BD%D0%A4%D0%B8%D0%BA%D1%81_API_contact.update
 		"""
-		pass
+		TEMPLATE_NAME = self.TEMPLATE_FOLDER + 'update.xml'
+
+		response = self.__base__._get_response(TEMPLATE_NAME, **kwargs)
+
+		return response 
 
 	def update_custom_data(self):
 		"""
