@@ -14,7 +14,7 @@ class Contact(object):
 		kwargs['account'] = self.__base__.account
 
 		request_message = self.__base__._load_template(TEMPLATE_NAME, **kwargs)
-		print(request_message)
+		# print(request_message)
 		response = self.__base__._send_request(request_message)
 
 		return response
