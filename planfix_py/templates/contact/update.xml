@@ -1,42 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <request method="contact.update">
-  <account></account>
-  <sid></sid>
-  <silent></silent>
+  <account>{{ account }}</account>
+  <sid>{{ sid }}</sid>
+  <silent>{{ silent }}</silent>
   <contact>
-    <id></id>
-    <userid></userid>
-    <general></general>
-    <name></name>
-    <midName></midName>
-    <lastName></lastName>
-    <template></template>
-    <post></post>
-    <email></email>
+    <id>{{ id }}</id>
+    <userid>{{ userid }}</userid>
+    <general>{{ general }}</general>
+    <name>{{ name }}</name>
+    <midName>{{ midName }}</midName>
+    <lastName>{{ lastName }}</lastName>
+    <template>{{ template }}</template>
+    <post>{{ post }}</post>
+    <email>{{ email }}</email>
     <phones>
         <phone>
-            <number></number>
-            <typeId></typeId>
-            <typeName></typeName>
+            <number>{{ number }}</number>
+            <typeId>{{ typeId }}</typeId>
+            <typeName>{{ typeName }}</typeName>
         </phone>
-        <!-- ... -->
     </phones>
     <secondaryEmails>
-        <email></email>
-        <!-- ... -->
+        <email>{{ email }}</email>
     </secondaryEmails>
-    <address></address>
-    <description></description>
-    <sex></sex>
-    <site></site>
-    <skype></skype>
-    <facebook></facebook>
-    <vk></vk>
-    <icq></icq>
-    <birthdate></birthdate>
-    <lang></lang>
-    <canBeWorker></canBeWorker>
-    <canBeClient></canBeClient>
+    <address>{{ address }}</address>
+    <description>{{ description }}</description>
+    <sex>{{ sex }}</sex>
+    <site>{{ site }}</site>
+    <skype>{{ skype }}</skype>
+    <facebook>{{ facebook }}</facebook>
+    <vk>{{ vk }}</vk>
+    <icq>{{ icq }}</icq>
+    <birthdate>{{ birthdate }}</birthdate>
+    <lang>{{ lang }}</lang>
+    <canBeWorker>{{ canBeWorker }}</canBeWorker>
+    <canBeClient>{{ canBeClient }}</canBeClient>
     <group>
       <id></id>
     </group>
@@ -45,13 +43,11 @@
         <id></id>
         <value></value>
       </customValue>
-      <!-- ... -->
     </customData>
     <responsible>
       <users>
         <id></id>
         <id></id>
-        <!-- ... -->
       </users>
       <groups>
         <id></id>
@@ -60,5 +56,5 @@
       </groups>
     </responsible>
   </contact>
-  <signature></signature>
+  <signature>{{ signature }}</signature>
 </request>
