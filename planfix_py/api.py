@@ -39,16 +39,20 @@ class PlanfixAPI(object):
 
 		return response
 
-	def _load_template(self, template_name, **kwargs):
+	def _load_template(self, template_name, kwargs):
 		template = self.__templates_env.get_template(template_name)
 
 		kwargs['account'] = self.account
 		request_message = template.render(**kwargs)
 
+		print(kwargs)
+
+		print(request_message)
+
 		return request_message
 
-	def _get_response(self, template_name, **kwargs):
-		xml = self._load_template(template_name, **kwargs)
+	def _get_response(self, template_name, kwargs):
+		xml = self._load_template(template_name, kwargs)
 
 		response = self._send_request(xml)
 		return response.text
