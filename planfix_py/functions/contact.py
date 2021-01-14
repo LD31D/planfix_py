@@ -55,11 +55,15 @@ class Contact(object):
 
 		return response
 
-	def manage_planfix_access(self):
+	def manage_planfix_access(self, kwargs):
 		"""
 		https://planfix.ru/docs/%D0%9F%D0%BB%D0%B0%D0%BD%D0%A4%D0%B8%D0%BA%D1%81_API_contact.managePlanfixAccess
 		"""
-		pass
+		TEMPLATE_NAME = self.TEMPLATE_FOLDER + 'managePlanfixAccess.xml'
+
+		response = self.__base__._get_response(TEMPLATE_NAME, kwargs)
+
+		return response
 
 	def update_user_info(self):
 		"""
