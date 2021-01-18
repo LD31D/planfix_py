@@ -95,7 +95,7 @@ class Contact(object):
 
 		return response
 
-	def get_group_list(self):
+	def get_group_list(self, kwargs):
 		"""
 		https://planfix.ru/docs/%D0%9F%D0%BB%D0%B0%D0%BD%D0%A4%D0%B8%D0%BA%D1%81_API_contact.getGroupList
 		"""
