@@ -106,9 +106,13 @@ class Contact(object):
 		return response
 
 
-	def delete(self):
+	def delete(self, kwargs):
 		"""
 		https://planfix.ru/docs/%D0%9F%D0%BB%D0%B0%D0%BD%D0%A4%D0%B8%D0%BA%D1%81_API_contact.delete
 		"""
-		pass
+		TEMPLATE_NAME = self.TEMPLATE_FOLDER + 'delete.xml'
+
+		response = self.__base__._get_response(TEMPLATE_NAME, kwargs)
+
+		return response
 		
