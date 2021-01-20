@@ -18,7 +18,7 @@ class PlanfixAPI(object):
 			loader=PackageLoader('planfix_py', 'templates')
 		)
 
-	def __init__(self, account=None, token=None, api_key=None):
+	def __init__(self, account='', token='', api_key=''):
 		self.account = account
 		self.token = token
 		self.api_key = api_key
@@ -44,10 +44,6 @@ class PlanfixAPI(object):
 
 		kwargs['account'] = self.account
 		request_message = template.render(**kwargs)
-
-		print(kwargs)
-
-		print(request_message)
 
 		return request_message
 

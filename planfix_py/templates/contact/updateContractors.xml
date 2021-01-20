@@ -8,13 +8,13 @@
       <addClient>
         {% for id in addClient %}
           <id>{{ id }}</id>
-        {% iendfor %}
+        {% endfor %}
       </addClient>
 
       <delClient>
         {% for id in delClient %}
           <id>{{ id }}</id>
-        {% iendfor %}
+        {% endfor %}
       </delClient>
     </contractors>
   </contact>
