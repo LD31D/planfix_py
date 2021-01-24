@@ -1,3 +1,5 @@
+import xmltodict
+
 from requests import post
 from requests.auth import HTTPBasicAuth
 
@@ -51,4 +53,6 @@ class PlanfixAPI(object):
 		xml = self._load_template(template_name, kwargs)
 
 		response = self._send_request(xml)
-		return response.text
+
+		text = xmltodict.parse(response.text)
+		return text

@@ -1,11 +1,12 @@
 import unittest
+from collections import OrderedDict
 
 from planfix_py import PlanfixAPI
 
 
 class TestContact(unittest.TestCase):
 
-	COMING_RESPONSE = '<?xml version="1.0" encoding="UTF-8"?>\n<response status="error"><code>0001</code><message/></response>\n'
+	COMING_RESPONSE = OrderedDict([('response', OrderedDict([('@status', 'error'), ('code', '0001'), ('message', None)]))])
 
 	def setUp(self):
 		self.pf = PlanfixAPI()

@@ -6,7 +6,7 @@ with open('README.md', 'r') as file:
 
 setup(
 	name='planfix-py',
-	version='0.3',
+	version='0.4',
 	license='MIT',
 	description='Python package for working with Planfix API',
 
@@ -22,7 +22,8 @@ setup(
 
 	install_requires=[
 		'requests',
-		'jinja2'
+		'jinja2',
+		'xmltodict'
     ],
 
 	zip_safe=False

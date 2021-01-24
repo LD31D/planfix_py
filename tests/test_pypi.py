@@ -12,7 +12,7 @@ class TestPYPI(unittest.TestCase):
 		url = f'https://pypi.org/project/planfix-py/{package_version}/'
 		response = get(url)
 
-		self.assertIn('Error code 404', response.text)
+		self.assertIn('Page Not Found (404)', response.text)
 
 
 if __name__ == '__main__':
