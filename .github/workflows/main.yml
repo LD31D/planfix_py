@@ -7,11 +7,6 @@ on:
 jobs:
   testing:
     runs-on: ubuntu-latest
-    env:
-      DB_URL: ${{ secrets.DB_URL }}
-      PF_ACCOUNT: ${{ secrets.PF_ACCOUNT }}
-      PF_API_KEY: ${{ secrets.PF_API_KEY }}
-      PF_TOKEN: ${{ secrets.PF_TOKEN }}
 
     steps:
       - name: Git Clone
